@@ -40,7 +40,7 @@ class EmployeeController extends BaseController
             return $this->error(__('common.error'), 500);
 
         return $this->responseResource(
-            EmployeeResource::make($model),
+            EmployeeResource::make($model->load('company')),
             status: 201
         );
     }

@@ -19,9 +19,14 @@ class EmployeeRepository extends BaseRepository implements EmployeeInterface
     public function create($data): Employee|bool
     {
         return parent::create([
-            'username' => $data['username'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password'])
+            'first_name'  => $data['first_name'],
+            'last_name'   => $data['last_name'],
+            'email'       => $data['email'],
+            'phone'       => $data['phone'],
+            'is_intern'   => $data['is_intern'],
+            'started_at'  => $data['started_at'],
+            'company_id'  => $data['company_id'],
+            'password'    => Hash::make($data['password'])
         ]);
     }
 

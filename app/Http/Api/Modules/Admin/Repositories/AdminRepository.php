@@ -18,8 +18,10 @@ class AdminRepository extends BaseRepository implements AdminInterface
     public function register($data): Admin|bool
     {
         return $this->create([
-            'username' => $data['username'],
+            'first_name' => $data['first_name'],
+            'last_name'  => $data['last_name'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
             'password' => Hash::make($data['password'])
         ]);
     }
