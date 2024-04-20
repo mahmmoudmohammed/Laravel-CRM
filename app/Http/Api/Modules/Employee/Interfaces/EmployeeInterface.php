@@ -9,6 +9,5 @@ use Illuminate\Database\Eloquent\Builder;
 interface EmployeeInterface
 {
     public function create($data): Employee|bool;
-    public function internedEmployees(): LengthAwarePaginator|false;
     public function list(Builder $builder): LengthAwarePaginator|false;
 }

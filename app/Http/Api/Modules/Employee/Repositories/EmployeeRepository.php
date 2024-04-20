@@ -31,10 +31,4 @@ class EmployeeRepository extends BaseRepository implements EmployeeInterface
             ->paginate($this::paginationLimit(request('per_page', config('app.pagination'))));
     }
 
-    public function internedEmployees(): LengthAwarePaginator|false
-    {
-        return $this->model()::where('is_intern', true)
-            ->with('company.media')->latest()
-            ->paginate($this::paginationLimit(request('per_page', config('app.pagination'))));
-    }
 }

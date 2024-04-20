@@ -11,7 +11,6 @@ Route::name('employee.')->prefix('v1/employees')->group(function () {
         Route::get('/{model}', [EmployeeController::class, 'show']);
         Route::patch('/{model}', [EmployeeController::class, 'update']);
         Route::get('/', [EmployeeController::class, 'index']);
-        Route::get('/interned/employees', [EmployeeController::class, 'internedEmployees']);
         Route::delete('/{model}', [EmployeeController::class, 'destroy']);
     });
 });

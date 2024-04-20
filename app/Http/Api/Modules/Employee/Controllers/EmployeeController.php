@@ -68,11 +68,4 @@ class EmployeeController extends BaseController
         return $this->repository->delete($model->id) ?
             $this->error(__('common.error'), 500) : $this->success();
     }
-
-    public function internedEmployees(): JsonResponse
-    {
-        return $this->responseResource(
-            EmployeeResource::collection($this->repository->internedEmployees()),
-        );
-    }
 }
